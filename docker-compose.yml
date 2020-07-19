@@ -1,16 +1,42 @@
-version: "3"
-
-services:
-
-    server:
-        build: server/
-        command: python ./server.py
-        ports:
-            - 2222:2222
+version: '3'
     
-    client:
-        build: client/
-        command: python ./client.py
-        network_mode: host
+services:
+    db:
+        build: .
+        container_name: db
+        networks:
+            - djangonetwork
+        image: postgres
+        restart: always
+        volumes: 
+            - postgres_data:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_DB=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+    migration:
+        build: .
+        command: python manage.py migrate --noinput
+        volumes:
+            - .:/code
         depends_on:
-            - server
+        - db
+    web:
+        build: .
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+            - .:/code
+        ports:
+            - "8000:8000"
+        depends_on:
+            - db
+            - migration
+        links:
+            - db:db
+
+networks:
+    djangonetwork:
+        driver: bridge
+
+volumes: 
+    postgres_data:

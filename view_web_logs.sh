@@ -1,0 +1,1 @@
+docker logs $(docker ps | grep englishWords | awk '{ print $1 }')

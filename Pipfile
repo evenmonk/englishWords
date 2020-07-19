@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "~=3.0.0"
+djangorestframework = "*"
+markdown = "*"
+dj-database-url = "*"
+pillow = "*"
+psycopg2-binary = "*"
+pylint-django = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
