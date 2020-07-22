@@ -11,9 +11,9 @@ Install the dependencies and start the server.
 ```sh
 $ sudo apt install docker-compose
 ```
-```sh
+
 build containers
-```
+```sh
 $ sudo docker-compose build --d
 ```
 run migrations
