@@ -10,12 +10,31 @@ Install the dependencies and start the server.
 
 ```sh
 $ sudo apt install docker-compose
+```
+```sh
+build containers
+```
 $ sudo docker-compose build --d
+```
+run migrations
+```sh 
 $ sudo docker-compose run web python3 manage.py makemigrations
 $ sudo docker-compose run web python3 manage.py migrate
+```
+collect static files
+```sh
 $ sudo docker-compose run web python3 manage.py collectstatic
+```
+create a user for admin
+```sh
 $ sudo docker-compose run web python3 manage.py createsuperuser
+```
+clear 8000 port
+```sh
 $ sudo ufw allow 8000
+```
+run containers
+```sh
 $ sudo docker-compose up
 ```
 
