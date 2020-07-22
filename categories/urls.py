@@ -9,4 +9,5 @@ urlpatterns = [
     path('themes/', views.ThemesAPIView.as_view(), name='themes'),
     url(r'^themes/(?P<theme_id>[0-9]+)/$', views.ThemeAPIView.as_view(), name='theme'),
     url(r'^words/(?P<word_id>[0-9]+)/$', views.WordAPIView.as_view(), name='word')
+
 ]

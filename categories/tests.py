@@ -1,3 +1,6 @@
 from django.test import TestCase
 
-# Create your tests here.
+class LevelTestCase(TestCase):
+    def setUp(self):
+        self.objects.create(name="Intermidiate", code="B1")
+        self.objects.create(name="Advanced", code="C1")

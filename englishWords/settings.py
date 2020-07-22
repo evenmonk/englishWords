@@ -25,7 +25,7 @@ SECRET_KEY = ')$2vml-2*=8o4opbk&7+i44jreim#d#^!i_xze*lqs$eon#$y8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'englishwordsapi.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'englishwordsapi.herokuapp.com', 'localhost']
 
 # Application definition
 
@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'englishWords.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
+        'USER': 'root',
+        'PASSWORD': 'djangorestfullapi',
+        'HOST': 'localhost',
         'PORT': 5432,
     }
 }
