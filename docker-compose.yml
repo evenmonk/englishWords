@@ -1,15 +1,8 @@
 version: '3'
-    
+
 services:
     db:
-        build: .
-        container_name: db
-        networks:
-            - djangonetwork
         image: postgres
-        restart: always
-        volumes: 
-            - postgres_data:/var/lib/postgresql/data/
         environment:
             - POSTGRES_DB=postgres
             - POSTGRES_USER=postgres
@@ -20,7 +13,7 @@ services:
         volumes:
             - .:/code
         depends_on:
-        - db
+            - db
     web:
         build: .
         command: python manage.py runserver 0.0.0.0:8000
@@ -31,12 +24,3 @@ services:
         depends_on:
             - db
             - migration
-        links:
-            - db:db
-
-networks:
-    djangonetwork:
-        driver: bridge
-
-volumes: 
-    postgres_data:
