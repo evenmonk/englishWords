@@ -53,5 +53,5 @@ localhost:8000
 
 ```sh
 user: root
-password: djangorestfullapi
+password: password
 ```
