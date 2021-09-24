@@ -132,7 +132,7 @@
                 "sha256:ffe538682dc19cc542ae7c3e504fdf54ca7f86fb8a135e59dd6bc8627eae6cce"
             ],
             "index": "pypi",
-            "version": >= "8.1.1"
+            "version": >= "8.3.2"
         },
         "psycopg2-binary": {
             "hashes": [
