@@ -43,7 +43,7 @@ Verify the deployment by navigating to your server address in your preferred bro
 ```sh
 localhost:8000
 ```
-- запуск приложения: `docker-compose up --build -d` | `./start.sh ` \n
+- запуск приложения: `docker-compose up --build -d` | `./start.sh `
 - остановка: `docker-compose down -v` | `./stop.sh` 
 - посмотреть логи: `./view_web_logs.sh`
 
