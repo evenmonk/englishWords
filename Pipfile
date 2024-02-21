@@ -8,7 +8,7 @@ django = ">=3.1.13"
 djangorestframework = "*"
 markdown = "*"
 dj-database-url = "*"
-pillow = "*"
+Pillow = ">=10.2.0"
 psycopg2-binary = "*"
 pylint-django = "*"
 
